@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+    /* background: #3D95ee15; */
+    /* background-image: radial-gradient(circle, #4233fb50 1px, #f9f9f9 1px); */
+    background-size: 20px 20px; 
+    color: #1a1a1a;
+    margin: 0;
+
+    
+}
+
+h1,h2,h3, h4{
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  
+    /* height: 0.5em; */
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgba(66, 51, 251, 0.05);
+    border-radius: 5px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(66, 51, 251, 0.2);
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(66, 51, 251, 1);
+  }
