@@ -2,8 +2,6 @@
     import { width, height } from '$lib/store'
     import { navigating } from '$app/stores'
     import '../style.css' 
-    import paths from '$lib/images/paths.svg'
-    import kodiiaLogo from '$lib/logos/kodiia_logo_k.svg'
     
 
     $: innerWidth = 0
