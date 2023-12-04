@@ -13,7 +13,7 @@
 <svelte:head>
     <title>Kodiia | Online Workspace For Procedural and Generative Design</title>
     <meta name="online workspace to learn programming and build projects">
-    <!-- <script async src="https://analytics.eu.umami.is/script.js" data-website-id="890ca547-7612-43ff-ae55-27e28af65147"></script> -->
+    <script async src="https://eu.umami.is/script.js" data-website-id="dd8fc847-5cc2-4974-affa-9f59f3e65fcf"></script>
 </svelte:head>
 
 <svelte:window bind:innerWidth bind:innerHeight />
