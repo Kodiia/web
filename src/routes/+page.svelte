@@ -1,6 +1,7 @@
 <script>
-    import { height } from '$lib/store'
+    import { height, theme } from '$lib/store'
     import kodiia_logo_white from '$lib/logos/kodiia_logo_white.svg'
+    import kodiia_logo_black from '$lib/logos/kodiia_logo_black.svg'
 
     let script = `let sketch = function (p) {
   let rows = 5;
@@ -70,13 +71,26 @@ let code = `<!doctype html>
 </html>
 `
 
+function switchTheme(){
+  if($theme === 'dark'){
+    $theme = 'light'
+  } else {
+    $theme = 'dark'
+  }
+}
+
 </script>
 
 
-
+<div class='{$theme}'>
 <div class='container' style='min-height: {$height}px;'>
     <div class='logosContainer'>
-      <img src={kodiia_logo_white} alt='kodiia logo' width='70'/>
+      {#if $theme === 'dark'}
+        <img src={kodiia_logo_white} alt='kodiia logo' width='70'/>
+      {:else}
+        <img src={kodiia_logo_black} alt='kodiia logo' width='70'/>
+      {/if}
+      <button class='smallMenuButton' on:click={switchTheme} style='font-size: 1.5rem;'>&#9681;</button>
     </div>
 
     <div class='heroContainer'>
@@ -101,19 +115,26 @@ let code = `<!doctype html>
         <p>info@kodiia.com</p>
     </footer>
 </div>
+</div>
 
 <style>
-.container{
+  .dark{
+    color: #f9f9f9;
+  }
+  .light{
+    color: #1a1a1a;
+  }
+  .container{
     width: 100%;
     max-width: 800px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     /* border: 2px solid #f9f9f9; */
-    color: #f9f9f9;
+    /* color: #f9f9f9; */
     box-sizing: border-box;
-}
-.logosContainer{
+  }
+  .logosContainer{
     width: 100%;
     height: 60px;
     padding: 20px 10px;
@@ -122,6 +143,21 @@ let code = `<!doctype html>
     align-items: center;
     box-sizing: border-box;
     margin-bottom: 10px;
+  }
+.smallMenuButton{
+  background: none;
+  margin: 5px;
+  padding: 0;
+  border: none;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.smallMenuButton:hover{
+  text-decoration: underline;
 }
 .heroContainer{
     width: 100%;

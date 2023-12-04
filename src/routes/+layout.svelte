@@ -1,5 +1,5 @@
 <script>
-    import { width, height } from '$lib/store'
+    import { width, height, theme } from '$lib/store'
     import { navigating } from '$app/stores'
     import '../style.css' 
     
@@ -19,7 +19,7 @@
 <svelte:window bind:innerWidth bind:innerHeight />
 
 
-<div class='layout-container' style='background-color: #1a1a1a;'>
+<div class='layout-container' style='background-color: {$theme === 'dark' ? "#1a1a1a" : "#f9f9f9"};'>
 {#if $navigating}
     <div class='loaderContainer'>
         <div class='loader'></div>
@@ -47,6 +47,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        transition: background 1s;
     }
     .logo-card{
         width: 80px;
