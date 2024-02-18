@@ -10,7 +10,7 @@
   let tileHeight;
 
   p.setup = function () {
-    p.createCanvas(800, 400);
+    p.createCanvas(800, 350);
     p.background("#1a1a1a");
     tileWidth = p.width / cols;
     tileHeight = p.height / rows;
@@ -99,18 +99,19 @@ function switchTheme(){
         </div>
 
         <h1>Design like an artist<br> Think like a programmer</h1>
-        <p>An online workspace for creative developers.<br>
-            Get the skills you need to turn coding into a creative tool.
+        <p style='margin-top: 0;'>An online workspace for creative developers.<br> 
+          Turn coding into a creative tool.   
         </p>
         <div class='heroLinksContainer'>
           <a href='https://kodiia.me' id='startButton'>GET STARTED with βeta</a>
           <p>or</p>
           <a href='https://forms.gle/NKirwNakYKd7xp747'>Join the waitlist to get all the updates</a>
         </div>
+        <p style='font-family: "Source Code Pro", sans-serif;'>We help architects, artists, designers, developers, and other creative professionals learn procedural design to create art, simulations, and games using web developement tools like p5.js, three.js, brain.js and more.</p>
     </div>
 
     <footer>
-        <p>Copyright © 2023 Kodiia</p> 
+        <p>Copyright © 2024 Kodiia</p> 
         <p>Made with 💜 across the globe</p>
         <p>info@kodiia.com</p>
     </footer>
@@ -185,7 +186,7 @@ iframe{
     padding: 0;
     border: 0;
     width: 100%;
-    height: 400px;
+    height: 350px;
     overflow: hidden;
     touch-action: none;
     border-radius: 10px; 
