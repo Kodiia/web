@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
@@ -17,30 +17,33 @@ body{
 
 h1,h2,h3, h4{
     font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
 }
+
 
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-  
-    /* height: 0.5em; */
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: rgba(66, 51, 251, 0.05);
-    border-radius: 5px;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgba(66, 51, 251, 0.2);
-    border-radius: 5px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(66, 51, 251, 1);
-  }
+  width: 5px;
+  height: 5px;
+
+  /* height: 0.5em; */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: hsl(155, 70%, 55%, 2%);
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: hsl(155, 70%, 55%, 50%);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(155, 70%, 55%, 100%);
+}
+
