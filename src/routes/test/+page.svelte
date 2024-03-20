@@ -113,8 +113,9 @@ function changeTheme(){
     <NavPanel />
 
     <div class='heroContainer'>
+      <div style='margin: auto; max-width: 800px;'>
         <h1>Design like an <span class='wordSpan' style='background: linear-gradient(45deg, hsl({$primaryColor}), hsl({$accentColor})) text;'>artist</span><br> Think like a <span class='wordSpan' style='background: linear-gradient(45deg, hsl({$primaryColor}), hsl({$accentColor})) text;'>programmer</span></h1>
-        <p style='margin-top: 0; width: 80%;'>
+        <p style='margin-top: 0;'>
           Start your next creative coding project with everything you need: tutorials, challenges, coding hints, storage, and an in-browser code-editor, all in one place!
         </p>
         <div class='heroLinksContainer'>
@@ -124,16 +125,18 @@ function changeTheme(){
           <p style='margin: 5px;'>or</p>
             <a href='https://forms.gle/NKirwNakYKd7xp747' style='color: hsl({$textColor});'>Join the waitlist to get all the updates</a>
         </div>
-        <div class='screenWrapper' style='background: linear-gradient(45deg, hsl({$primaryColor + ', 30%'}), hsl({$accentColor + ', 30%'}));'>
-          <img src={screenshot} alt='screenshot' />
-          <div class='scriptContainer'>
-            <iframe srcDoc={code} sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" title='code'/>
-          </div>
-        </div>
-        
-
-        <p style='font-family: "Source Code Pro", sans-serif; width: 80%;'>We help architects, artists, designers, developers, and other creative professionals learn procedural design to create art, simulations, and games using web developement tools like p5.js, three.js, brain.js and more.</p>
+      </div>
     </div>
+
+    <div class='screenWrapper' style='background: linear-gradient(45deg, hsl({$primaryColor + ', 30%'}), hsl({$accentColor + ', 30%'}));'>
+      <img src={screenshot} alt='screenshot' />
+      <div class='scriptContainer'>
+        <iframe srcDoc={code} sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" title='code'/>
+      </div>
+    </div>
+    
+
+    <p style='font-family: "Source Code Pro", sans-serif; width: 80%;'>We help architects, artists, designers, developers, and other creative professionals learn procedural design to create art, simulations, and games using web developement tools like p5.js, three.js, brain.js and more.</p>
 
     <footer>
         <p>Copyright © 2024 Kodiia</p> 
@@ -152,10 +155,11 @@ function changeTheme(){
   }
   .container{
     width: 100%;
-    max-width: 800px;
+    max-width: 1400px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    align-items: center;
     /* border: 2px solid #f9f9f9; */
     /* color: #f9f9f9; */
     box-sizing: border-box;
@@ -188,10 +192,14 @@ function changeTheme(){
 .heroContainer{
     width: 100%;
     /* min-height: 100svh; */
+    min-height: 60svh;
     padding: 0 10px;
     margin-top: 50px;
+    
     display: flex;
     flex-direction: column;
+    /* align-items: center;
+    justify-content: center; */
     /* justify-content: space-between; */
     align-items: center;
     box-sizing: border-box;
@@ -273,7 +281,8 @@ iframe{
     box-sizing: border-box;
 }
 .screenWrapper{
-  width: 100%;
+  width: 90%;
+  max-width: 1200px;
   padding: 2px;
   border-radius: 10px;
   box-sizing: border-box;
@@ -289,12 +298,14 @@ iframe{
   border-radius: 8px;
 }
 footer{
+  width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid #f9f9f950;
     padding: 10px;
     font-weight: 0.8rem;
+    box-sizing: border-box;
 }
 footer p{
     margin: 5px;
