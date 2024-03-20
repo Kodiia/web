@@ -1,8 +1,8 @@
 <script>
-    import kodiia_logo_bw from '$lib/logos/kodiia_logo_bw.svg'
+    // import kodiia_logo_bw from '$lib/logos/kodiia_logo_bw.svg'
     import kodiia_logo_black from '$lib/logos/kodiia_logo_black.svg'
     import kodiia_logo_white from '$lib/logos/kodiia_logo_white.svg'
-    import kodiia_logo_bw_small from '$lib/logos/kodiia_logo_bw_small.svg'
+    // import kodiia_logo_bw_small from '$lib/logos/kodiia_logo_bw_small.svg'
     import { bgColor, textColor, secondaryColor, primaryColor, accentColor, theme, width, height } from "./store"
     import { page } from '$app/stores';
 
