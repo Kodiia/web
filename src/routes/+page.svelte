@@ -129,8 +129,8 @@ function changeTheme(){
         <div class='buttonWrapper' >
           <a href='https://kodiia.me' id='startButton' style='background: linear-gradient(45deg, hsl({$primaryColor + ', 20%'}) 50%, hsl({$accentColor + ', 30%'})); color: {$theme === 'dark' ? '#f9f9f9' : '#1a1a1a'}; box-shadow: { startButtonIsHovered ? `0 0 15px hsl(${$primaryColor})` : 'none'}' on:pointerover={()=>{startButtonIsHovered = true}} on:pointerleave={()=>{startButtonIsHovered = false}}>GET STARTED with βeta</a> 
         </div>         
-        <p style='margin: 5px;'>or</p>
-          <a href='https://forms.gle/NKirwNakYKd7xp747' style='color: hsl({$textColor});'>Join the waitlist to get all the updates</a>
+        <!-- <p style='margin: 5px;'>or</p>
+          <a href='https://forms.gle/NKirwNakYKd7xp747' style='color: hsl({$textColor});'>Join the waitlist to get all the updates</a> -->
       </div>
     </div>
   </div>
@@ -199,7 +199,7 @@ text-decoration: underline;
 .heroContainer{
   width: 100%;
   /* min-height: 100svh; */
-  min-height: 60svh;
+  min-height: 50svh;
   padding: 0 10px;
   margin-top: 50px;
   
@@ -210,7 +210,7 @@ text-decoration: underline;
   /* justify-content: space-between; */
   align-items: center;
   box-sizing: border-box;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   text-align: center;
 }
 .heroContainer h1{
@@ -229,18 +229,19 @@ display: flex;
 flex-direction: column;
 /* justify-content: space-between; */
 align-items: center;
-padding: 20px 0;
+padding: 10px 0;
 }
 .heroLinksContainer a{
 color: #3d95ee;
 margin-left: 20px;
 }
 .scriptContainer{
-width: 43.5%;
-height: calc(100% - 6.5% - 2px);
+width: 43.4%;
+height: calc(100% - 6.5% - 3px);
 z-index: 2;
 position: absolute;
-top: 6.5%;
+margin-left: 6px;
+top: 6.4%;
 box-sizing: border-box;
 }
 iframe{
@@ -255,6 +256,7 @@ iframe{
 }
 .buttonWrapper{
 padding: 2px;
+margin:  0 0 20px 0;
 box-sizing: border-box;
 width: 150px;
 border-radius: 30px;
@@ -297,7 +299,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 position: relative;
-margin: 50px 0;
+margin: 0px 0;
 }
 .screenWrapper img{
 width: 100%;
