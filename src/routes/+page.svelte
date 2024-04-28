@@ -5,7 +5,7 @@
   import screenshot from '$lib/logos/Screenshot.webp'
   import NavPanel from '$lib/NavPanel.svelte';
 
-  let code = '', script = ''
+  let code = '', script = '', code2 = '', scriptFlow = ''
   
 
 height.subscribe(()=>{
@@ -79,6 +79,83 @@ let myp5 = new p5(sketch);
   </body>
 </html>
 `
+
+scriptFlow = `let sketch = function (p) {
+  let particles = [];
+  let particlesNumber = 500;
+  
+
+  p.setup = function () {
+    p.createCanvas(window.innerWidth, window.innerHeight);
+    p.strokeWeight(2);
+    p.stroke('#33dd99')
+    for (let i = 0; i < particlesNumber; i++) {
+      particles.push(
+        p.createVector(
+          Math.random() * window.innerWidth,
+          Math.random() * window.innerHeight
+        )
+      )
+    }
+  };
+
+  p.draw = function () {
+    p.background('#1a1a1a05');
+    for (let particle of particles) {
+      p.point(particle.x, particle.y);
+      let n = p.noise( particle.x * 0.002, particle.y * 0.002);
+      particle.x += Math.cos(n * Math.PI * 2);
+      particle.y += Math.sin(n * Math.PI * 2);
+      if (particle.x < 0 || particle.x > window.innerWidth) {
+        particle.x = Math.random() * window.innerWidth;
+        particle.y = Math.random() * window.innerHeight;
+      }
+      if (particle.y < 0 || particle.y > window.innerHeight) {
+        particle.x = Math.random() * window.innerWidth;
+        particle.y = Math.random() * window.innerHeight;
+      }
+    }
+  };
+
+  p.mousePressed = function () {
+    particles = [];
+    particlesNumber = 500;
+    p.setup()
+  }
+
+  p.windowResized = function () {
+    p.resizeCanvas(window.innerWidth, window.innerHeight);
+    particles = [];
+    particlesNumber = 500;
+    p.setup();
+  };};
+
+let myp5 = new p5(sketch);`
+
+code2 = `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Hello world!</title>
+
+
+  <!-- import p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"><\/script>
+
+</head>
+<body>
+  <style>
+      body{
+          margin: 0;
+          overflow: hidden;
+      }
+      </style>
+ <script type='module'>${scriptFlow}<\/script> 
+  </body>
+</html>
+`
 })
 
 
@@ -114,7 +191,7 @@ function changeTheme(){
 
 
 <div class='{$theme}'>
-<div class='container' style='min-height: {$height}px; background: radial-gradient(circle at 50% 0%, hsl({$primaryColor + ", 50%"}), transparent 30%), radial-gradient(circle at 50% 0%, hsl({$accentColor + ", 20%"}) 15px, transparent 10%);'>
+<div class='container' style='min-height: {$height}px; background: radial-gradient(circle at 50% 0%, hsl({$primaryColor + ", 50%"}), transparent 20%), radial-gradient(circle at 50% 0%, hsl({$accentColor + ", 20%"}) 15px, transparent 10%);'>
 
 
   <NavPanel />
@@ -143,7 +220,50 @@ function changeTheme(){
   </div>
   
 
-  <p style='font-family: "Source Code Pro", sans-serif; width: 80%;'>We help architects, artists, designers, developers, and other creative professionals learn procedural design to create art, simulations, and games using web developement tools like p5.js, three.js, brain.js and more.</p>
+  <p style='width: 80%;'>We help architects, artists, designers, developers, and other creative professionals create art, simulations, and games using web developement tools like p5.js, three.js, brain.js and more.</p>
+
+  <h2 style='margin-bottom: 20px;'>Upcoming events</h2>
+  <div class='courseContainer' style='border: 1px solid hsl({$textColor + ', 20%'});'>
+    <div class='courseTextContainer'>
+      <h3 style='margin-top: 0; border-bottom: 1px solid hsl({$textColor + ', 20%'}); padding-bottom: 10px;'>Artful Algorithms: The Magic of Creative Coding</h3>
+      <p>
+        Step into the enchanting world of creative coding with our beginner-friendly online course. 
+        It is an open invitation for designers, artists, programmers and architects to augment their creativity with the power of code.
+        Experience the thrill of creating visual, interactive, and audio projects for the web, develop video games and 3D computer graphics using WebGL. 
+        Learn to create engaging simulations, interact with the camera and even run your own AI model. 
+        This course, requiring no previous programming experience, is a unique blend of coding in the context of design, visual arts, and game design. 
+        <br><br>More info and dates coming soon.
+        <!-- It's a journey through creative coding, where you'll: -->
+      </p>
+
+      <details style='margin-top: 0; padding-bottom: 10px;'>
+        <summary style='border-bottom: 1px solid hsl({$textColor + ', 20%'}); cursor: pointer; padding-bottom: 10px;'>Course details</summary>
+        <div style='padding-bottom: 10px; border-bottom: 1px solid hsl({$textColor + ', 20%'}); margin-top: 20px; margin-bottom: 10px;'><h4 style='margin: 0;'>Lesson 1</h4> <p style='margin: 10px 0 0 0;'>get introduced to JavaScript, HTML, CSS and kickstart your first web project</p></div>
+        <div style='padding-bottom: 10px; border-bottom: 1px solid hsl({$textColor + ', 20%'}); margin-bottom: 10px;'><h4 style='margin: 0;'>Lesson 2</h4> <p style='margin: 10px 0 0 0;'>discover the basics of p5.js to craft static objects with code</p></div>
+        <div style='padding-bottom: 10px; border-bottom: 1px solid hsl({$textColor + ', 20%'}); margin-bottom: 10px;'><h4 style='margin: 0;'>Lesson 3</h4> <p style='margin: 10px 0 0 0;'>learn about Noise and Flow Field algorithms with p5.js to create animations, patterns, and unexpected colours</p></div>
+        <div style='padding-bottom: 10px; border-bottom: 1px solid hsl({$textColor + ', 20%'}); margin-bottom: 10px;'><h4 style='margin: 0;'>Lesson 4</h4> <p style='margin: 10px 0 0 0;'>jump into interactive projects with p5.js, connecting a webcam and Arduino with a laptop to blur the line between physical and digital worlds</p></div>
+        <div style='padding-bottom: 10px; border-bottom: 1px solid hsl({$textColor + ', 20%'}); margin-bottom: 10px;'><h4 style='margin: 0;'>Lesson 5</h4> <p style='margin: 10px 0 0 0;'>master agent-based design with p5.js and simulate human movement, self-driving cars, bird flight or animal migration</p></div>
+        <div style='padding-bottom: 10px; border-bottom: 1px solid hsl({$textColor + ', 20%'}); margin-bottom: 10px;'><h4 style='margin: 0;'>Lesson 6</h4> <p style='margin: 10px 0 0 0;'>explore 3D web project creation with three.js, including features such as effects, cameras, animation, lighting, materials</p></div>
+        <div style='padding-bottom: 10px; border-bottom: 1px solid hsl({$textColor + ', 20%'}); margin-bottom: 10px;'><h4 style='margin: 0;'>Lesson 7</h4> <p style='margin: 10px 0 0 0;'>learn about voxel aesthetics with three.js and create a video game featuring a cute character</p></div>
+        <div style='padding-bottom: 10px; border-bottom: 1px solid hsl({$textColor + ', 20%'}); margin-bottom: 10px;'><h4 style='margin: 0;'>Lesson 8</h4> <p style='margin: 10px 0 0 0;'>get introduced to the basics of transformers.js, training a model using pretrained models for an artistic project in the web browser, without the need for a server.</p></div>
+      </details>
+
+        <form action='?/register' method='POST' class='formContainer'>
+          <div class='formFieldContainer'>
+            <label for='email' class='formLabel'>
+                <span class='labelSpan'>Subscribe to shine with code and get all the news</span>
+            </label>
+            <input type='email' name='email' class='formInput' placeholder='your@email.com' style='background: hsl({$secondaryColor}) !important; color: hsl({$textColor}) !important; '/>
+          </div>
+          <button type='submit' class='submitButton' style='background: hsl({$primaryColor}); color: #1a1a1a;'>SUBSCRIBE</button>
+        </form>
+
+    </div>
+
+    <div class='courseScriptContainer'>
+      <iframe srcDoc={code2} sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" title='code'/>
+    </div>
+  </div>
 
   <footer>
       <p>Copyright © 2024 Kodiia</p> 
@@ -156,9 +276,11 @@ function changeTheme(){
 <style>
 .dark{
   color: #f9f9f9;
+  transition: all 0.25s;
 }
 .light{
   color: #1a1a1a;
+  transition: all 0.25s;
 }
 .container{
   width: 100%;
@@ -235,6 +357,7 @@ padding: 10px 0;
 color: #3d95ee;
 margin-left: 20px;
 }
+
 .scriptContainer{
 width: 43.4%;
 height: calc(100% - 6.5% - 3px);
@@ -306,6 +429,20 @@ width: 100%;
 box-sizing: border-box;
 border-radius: 8px;
 }
+
+.courseContainer{
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 90%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.courseTextContainer{
+  padding-right: 10px;
+}
+
 footer{
 width: 100%;
   display: flex;
@@ -319,6 +456,75 @@ width: 100%;
 footer p{
   margin: 5px;
 }
+
+details{
+  width: 100%;
+  list-style-type: none;
+}
+summary{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+summary::marker{
+  content: '';
+}
+
+details > summary::after {
+            content: '+';
+            font-size: 1.17rem;
+        }
+
+        details[open] > summary::after {
+            content: '-';
+            font-size: 1.17rem;
+        }
+
+.formFieldContainer{
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0;
+    }
+    a{
+        color: #3d95ee;
+    }
+    h2{
+        margin: 0;
+        font-weight: 300;;
+    }
+    label{
+        margin-bottom: 5px;
+    }
+    input{
+        appearance: none;
+        font-family: Source Code Pro, sans-serif;
+        font-size: 1rem;
+        transition: all 0.25s;
+        max-width: 300px;
+    }
+
+    .submitButton{
+        background: #4233fb;
+        color: #f9f9f9;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        transform: scale(1.0);
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 1rem;
+        font-family: Montserrat, sans-serif;
+        width: fit-content;
+    }
+    .submitButton:hover{
+        box-shadow: 0 0 10px #33dd99;
+        cursor: pointer;
+    }
+    .formInput{
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #1a1a1a20;
+    }
 
 @keyframes startButton {
 0% {
@@ -375,6 +581,13 @@ footer p{
   }
   .heroContainer h1{
     font-size: 2.5rem;
+  }
+  .courseContainer{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .submitButton{
+    margin-bottom: 20px;
   }
 }
 </style>
