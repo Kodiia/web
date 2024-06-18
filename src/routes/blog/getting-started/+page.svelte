@@ -9,6 +9,16 @@
 		textColor
 	} from '$lib/store';
 
+	import creatingProjectImg from '$lib/images/creating_project.png';
+	import editorImg from '$lib/images/editor.png';
+	import emailImg from '$lib/images/email.png';
+	import loginImg from '$lib/images/login.png';
+	import signupFormImg from '$lib/images/signup_form.png';
+	import signupEmailImg from '$lib/images/signup.png';
+	import homeImg from '$lib/images/home.png';
+	import projectsImg from '$lib/images/projects.png';
+	import runImg from '$lib/images/run.png';
+
 	import NavPanel from '$lib/NavPanel.svelte';
 </script>
 
@@ -19,13 +29,13 @@
 		<h1 style="margin-top: 60px;">Getting started guide</h1>
 		<main>
 			<article>
-				<div></div>
+				<div><img src={homeImg} alt="home page" loading="lazy" /></div>
 				<p>
 					Welcome to our online code editor, where you can create projects and utilize AI assistance
 					to enhance your coding experience. This guide will walk you through the steps to sign up,
 					log in, and get started with your first project.
 				</p>
-				<div></div>
+				<div><img src={signupFormImg} alt="signup form" loading="lazy" /></div>
 				<div>
 					<h3>Sign Up</h3>
 
@@ -35,7 +45,10 @@
 					</p>
 				</div>
 
-				<div></div>
+				<div>
+					<img src={signupEmailImg} alt="signup form" loading="lazy" />
+					<img src={emailImg} alt="email verification" loading="lazy" />
+				</div>
 				<div>
 					<h3>Verify Your Email</h3>
 
@@ -45,14 +58,14 @@
 					</p>
 				</div>
 
-				<div></div>
+				<div><img src={loginImg} alt="login page" loading="lazy" /></div>
 				<div>
 					<h3>Log In</h3>
 
 					<p>Once you have verified your email, log in to your account using your credentials.</p>
 				</div>
 
-				<div></div>
+				<div><img src={creatingProjectImg} alt="creating project" loading="lazy" /></div>
 				<div>
 					<h3>Choose a Template</h3>
 
@@ -67,7 +80,7 @@
 					</ul>
 					<p>More templates will be added soon, so stay tuned!</p>
 				</div>
-				<div></div>
+				<div><img src={projectsImg} alt="projects page" loading="lazy" /></div>
 				<div>
 					<h3>Access Your Projects</h3>
 
@@ -76,7 +89,7 @@
 						and view your projects.
 					</p>
 				</div>
-				<div></div>
+				<div><img src={editorImg} alt="editor" loading="lazy" /></div>
 				<div>
 					<h3>Files Panel</h3>
 
@@ -84,10 +97,7 @@
 						The <b>Files</b> panel is where you can edit your code and upload assets. This is the core
 						area where you will spend most of your time working on your projects.
 					</p>
-				</div>
 
-				<div></div>
-				<div>
 					<h3>Resources Panel</h3>
 
 					<p>
@@ -109,7 +119,7 @@
 						</li>
 					</ul>
 				</div>
-				<div></div>
+				<div><img src={runImg} alt="running a project" loading="lazy" /></div>
 				<div>
 					<h3>Get Started with Your Project</h3>
 
@@ -180,10 +190,16 @@
 
 		box-sizing: border-box;
 	}
+	h3 {
+		margin-top: 0;
+	}
+	img {
+		width: 100%;
+	}
 	article {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 10px;
+		gap: 20px;
 	}
 	footer {
 		width: 100%;
