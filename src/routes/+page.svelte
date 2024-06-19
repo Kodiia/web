@@ -242,7 +242,9 @@
 								startButtonIsHovered = false;
 							}}>GET STARTED with βeta</a
 						>
+						
 					</div>
+					<!-- <a href='/blog/getting-started'>Check our Getting Started guide</a> -->
 					<!-- <p style='margin: 5px;'>or</p>
             <a href='https://forms.gle/NKirwNakYKd7xp747' style='color: hsl({$textColor});'>Join the waitlist to get all the updates</a> -->
 				</div>

@@ -26,7 +26,7 @@
 	<div class="container" style="min-height: {$height}px;">
 		<NavPanel />
 
-		<h1 style="margin-top: 60px;">Getting started guide</h1>
+		<h1 style="margin-top: 100px;">Getting started guide</h1>
 		<main>
 			<article>
 				<div><img src={homeImg} alt="home page" loading="lazy" /></div>
@@ -181,7 +181,6 @@
 		font-weight: 300;
 	}
 	main {
-		margin-top: 50px;
 		padding: 10px;
 		border-radius: 10px;
 		margin-bottom: 20px;
@@ -213,5 +212,13 @@
 	}
 	footer p {
 		margin: 5px;
+	}
+
+	@media screen and (max-width: 700px) {
+		article {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 20px;
+		}
 	}
 </style>
