@@ -26,8 +26,9 @@
 	<div class="container" style="min-height: {$height}px;">
 		<NavPanel />
 
-		<h1 style="margin-top: 100px;">Getting started guide</h1>
+		
 		<main>
+			<h1 style="margin-top: 100px;">Getting started guide</h1>
 			<article>
 				<div><img src={homeImg} alt="home page" loading="lazy" /></div>
 				<p>

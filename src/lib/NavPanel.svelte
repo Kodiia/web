@@ -39,29 +39,24 @@
 <nav style="color: {$textColor};">
 	{#if $width > 700}
 		<div style="width: 100%; display: flex; align-items: center; justify-content: space-between;">
-			<!-- <a href='https://kodiia.com'>
-                <img src={kodiia_logo_bw} style='filter: {$theme === 'dark' ? "invert(1)" : "invert(0)"};' alt='logo' width='70'>
-            </a> -->
-
 			<div class="desktopMenu">
 				{#if $theme === 'dark'}
-					<img src={kodiia_logo_white} alt="kodiia logo" width="70" />
+					<a href="/"><img src={kodiia_logo_white} alt="kodiia logo" width="70" /></a>
 				{:else}
-					<img src={kodiia_logo_black} alt="kodiia logo" width="70" />
+					<a href="/"><img src={kodiia_logo_black} alt="kodiia logo" width="70" /></a>
 				{/if}
-				<div style='display: flex;'>
-					<a class="smallMenuButton" href="/blog/getting-started">Blog</a>
-					<button class="smallMenuButton" on:click={changeTheme} style="font-size: 1.5rem; cursor: pointer;"
-						>&#9681;</button
+				<div style="display: flex;">
+					<a class="smallMenuButton" href="/blog">Blog</a>
+					<button
+						class="smallMenuButton"
+						on:click={changeTheme}
+						style="font-size: 1.5rem; cursor: pointer;">&#9681;</button
 					>
 				</div>
 			</div>
 		</div>
 	{:else}
 		<div style="width: 100%; display: flex; align-items: center; justify-content: space-between;">
-			<!-- <a href='https://kodiia.com'>
-                <img src={kodiia_logo_bw} style='filter: {$theme === 'dark' ? "invert(1)" : "invert(0)"};' alt='logo' width='70'>
-            </a> -->
 			{#if $theme === 'dark'}
 				<img src={kodiia_logo_white} alt="kodiia logo" width="70" />
 			{:else}
@@ -119,9 +114,11 @@
 		</div>
 		<hr style="display: {mobileMenuDisplay}; max-height: calc({$height}px - 70px); width: 100%;" />
 		<div class="mobileMenu" style="display: {mobileMenuDisplay}; height: calc({$height}px - 70px);">
-            <a class="smallMenuButton" href="/blog/getting-started">Blog</a>
-			<button class="smallMenuButton" on:click={changeTheme} style="font-size: 1.5rem; cursor: pointer;"
-				>&#9681;</button
+			<a class="smallMenuButton" href="/blog">Blog</a>
+			<button
+				class="smallMenuButton"
+				on:click={changeTheme}
+				style="font-size: 1.5rem; cursor: pointer;">&#9681;</button
 			>
 		</div>
 	{/if}

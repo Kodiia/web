@@ -242,7 +242,6 @@
 								startButtonIsHovered = false;
 							}}>GET STARTED with βeta</a
 						>
-						
 					</div>
 					<!-- <a href='/blog/getting-started'>Check our Getting Started guide</a> -->
 					<!-- <p style='margin: 5px;'>or</p>
@@ -283,7 +282,15 @@
 						sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation"
 						title="code"
 					/> -->
-					<video src="{video}" autoplay={true} muted={true} preload="auto" loop={true} playsinline={true} style='width: 100%;'></video>
+					<video
+						src={video}
+						autoplay={true}
+						muted={true}
+						preload="auto"
+						loop={true}
+						playsinline={true}
+						style="width: 100%;"
+					></video>
 				</div>
 				<p style="width: 80%;">
 					For architects, designers, artists, and creative minds. Create generative art, virtual
@@ -291,8 +298,6 @@
 					transformers.js.
 				</p>
 			</div>
-
-			
 		</div>
 
 		<div class="cardContainer" style="margin-top: 20px; padding: 0;">
@@ -306,9 +311,11 @@
 				>
 					Create faster with AI
 				</h2>
-				
-				<div class="courseScriptContainer" style="border-radius: 10px; aspect-ratio: 16/9; background: grey; background-image: url({screenshotAI}); background-size: contain;">
-				</div>
+
+				<div
+					class="courseScriptContainer"
+					style="border-radius: 10px; aspect-ratio: 16/9; background: grey; background-image: url({screenshotAI}); background-size: contain;"
+				></div>
 				<p>Use chat to get possible directions for your experiments.</p>
 				<ul>
 					<li>step-by-step high level instructions</li>
@@ -354,8 +361,8 @@
 				</h2>
 				<div class="statementGrid">
 					<p>
-						We are a duo of award-winning architects with a passion for computational design, game design,
-						and web development.
+						We are a duo of award-winning architects with a passion for computational design, game
+						design, and web development.
 						<br /><br />We are dedicated to pushing boundaries and exploring the intersection of web
 						technologies and creative spheres.
 						<br /><br />We believe that being able to develop your own software tools is crucial for
@@ -376,6 +383,30 @@
 		<h2 style="margin-bottom: 20px;">Upcoming events</h2>
 		<div class="courseContainer" style="border: 1px solid hsl({$textColor + ', 20%'});">
 			<div class="courseTextContainer">
+				<code>DigitalFUTURES 2024</code>
+				<h3
+					style="margin-top: 0; border-bottom: 1px solid hsl({$textColor +
+						', 20%'}); padding-bottom: 10px;"
+				>
+					AI Multi-agent systems: Creating a Voxel City
+				</h3>
+				
+				<p><b>Dates:</b> 25 July – 28 July / 12:00 – 16:00 EST</p>
+				<p>
+					This workshop seeks to delve into the potential applications of multi-agent AI systems in
+					architectural design processes.
+				</p>
+				<a href='/blog/multi-agent-systems-workshop' class='link'>LEARN MORE</a>
+			</div>
+			<img
+					src="https://digitalfutures.international/wp-content/uploads/2024/06/AI-agents-DF-001-SA-lab.png"
+					alt="workshop-outcome-preview"
+				/>
+		</div>
+
+		<div class="courseContainer" style="border: 1px solid hsl({$textColor + ', 20%'});">
+			<div class="courseTextContainer">
+				<code>Kodiia</code>
 				<h3
 					style="margin-top: 0; border-bottom: 1px solid hsl({$textColor +
 						', 20%'}); padding-bottom: 10px;"
@@ -694,6 +725,29 @@
 	.courseTextContainer,
 	.cardTextContainer {
 		padding-right: 10px;
+	}
+	.courseContainer img {
+		width: 100%;
+	}
+	.courseContainer code{
+		display: block;
+		margin-bottom: 10px;
+	}
+	.link {
+		display: block;
+		width: fit-content;
+		min-height: 40px;
+		text-decoration: none;
+		border: 1px solid #3d9;
+		background: #1a1a1a;
+		color: #f9f9f9;
+		padding: 10px;
+		border-radius: 10px;
+		box-sizing: border-box;
+		margin-bottom: 5px;
+	}
+	.link:hover {
+		box-shadow: 0 0 10px #3d9;
 	}
 	.statementGrid {
 		display: grid;
