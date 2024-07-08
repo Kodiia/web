@@ -1,9 +1,5 @@
 <script>
-	import {
-		height,
-		theme,
-		textColor
-	} from '$lib/store';
+	import { height, theme, textColor } from '$lib/store';
 
 	import homeImg from '$lib/images/home.png';
 	import agentsImg from '$lib/images/agents.jpeg';
@@ -17,33 +13,30 @@
 
 		<main>
 			<h1 style="margin-top: 80px;">Blog</h1>
+			<p>Thoughts on AI and creativity</p>
 			<div class="postContainer" style="border: 1px solid hsl({$textColor + ', 20%'});">
 				<div class="postTextContainer">
-
 					<h3
 						style="margin-top: 0; border-bottom: 1px solid hsl({$textColor +
 							', 20%'}); padding-bottom: 10px;"
 					>
-					Creative superheroes are here to assist you. Meet Multi-Agent AI Systems.
+						Creative superheroes are here to assist you. Meet Multi-Agent AI Systems.
 					</h3>
 
-					<p style="padding-bottom: 10px; border-bottom: 1px solid hsl({$textColor + ', 20%'});">
+					<!-- <p style="padding-bottom: 10px; border-bottom: 1px solid hsl({$textColor + ', 20%'});">
 						At Kodiia, our research is primarily focused on the development of AI-powered tools
 							designed for creative tasks. These tools are particularly geared towards generative,
 							computational, and procedural design areas. We believe that multi-agent systems are,
 							perhaps, one of the most effective approaches to designing such tools. 
-					</p>
-					<a href="/blog/multi-agent-systems" class="link">More...</a>
+					</p> -->
+					<img src={agentsImg} alt="workshop-outcome-preview" />
+					<a href="/blog/multi-agent-systems" class="link">Read more...</a>
 				</div>
-				<img
-					src="{agentsImg}"
-					alt="workshop-outcome-preview"
-				/>
 			</div>
-			
+
 			<div class="postContainer" style="border: 1px solid hsl({$textColor + ', 20%'});">
 				<div class="postTextContainer">
-					<code>DigitalFUTURES 2024</code>
+					<code>DigitalFUTURES 2024 Workshop</code>
 					<h3
 						style="margin-top: 0; border-bottom: 1px solid hsl({$textColor +
 							', 20%'}); padding-bottom: 10px;"
@@ -51,45 +44,48 @@
 						AI Multi-agent systems: Creating a Voxel City
 					</h3>
 
-					<p><b>Dates:</b> 25 July – 28 July / 12:00 – 16:00 EST</p>
+					<!-- <p><b>Dates:</b> 25 July – 28 July / 12:00 – 16:00 EST</p>
 					<p style="padding-bottom: 10px; border-bottom: 1px solid hsl({$textColor + ', 20%'});">
 						This workshop seeks to delve into the potential applications of multi-agent AI systems
 						in architectural design processes.
-					</p>
-					<a href="/blog/multi-agent-systems-workshop" class="link">More...</a>
-				</div>
-				<img
+					</p> -->
+					<img
 					src="https://digitalfutures.international/wp-content/uploads/2024/06/AI-agents-DF-001-SA-lab.png"
 					alt="workshop-outcome-preview"
 				/>
+					<a href="/blog/multi-agent-systems-workshop" class="link">Read more...</a>
+				</div>
+				
 			</div>
 
-            <div class="postContainer" style="border: 1px solid hsl({$textColor + ', 20%'});">
+			<div class="postContainer" style="border: 1px solid hsl({$textColor + ', 20%'});">
 				<div class="postTextContainer">
 					<!-- <code>DigitalFUTURES 2024</code> -->
 					<h3
 						style="margin-top: 0; border-bottom: 1px solid hsl({$textColor +
 							', 20%'}); padding-bottom: 10px;"
 					>
-                    Getting started guide
+						Getting started guide
 					</h3>
 
-					<p style="padding-bottom: 10px; border-bottom: 1px solid hsl({$textColor + ', 20%'});">
-						This guide will walk you through the steps to sign up,
-					log in, and get started with your first project.
-					</p>
-					<a href="/blog/getting-started" class="link">More...</a>
+					<!-- <p style="padding-bottom: 10px; border-bottom: 1px solid hsl({$textColor + ', 20%'});">
+						This guide will walk you through the steps to sign up, log in, and get started with your
+						first project.
+					</p> -->
+					<img src={homeImg} alt="home page" loading="lazy" />
+					<a href="/blog/getting-started" class="link">Read more...</a>
 				</div>
-				<img src={homeImg} alt="home page" loading="lazy" />
+				
 			</div>
 		</main>
-        <footer>
+		<footer>
 			<p>Copyright © 2024 Kodiia</p>
 			<p>Made with 💜 across the globe</p>
 			<p>info@kodiia.com</p>
 		</footer>
 	</div>
 </div>
+
 <style>
 	.dark {
 		color: #f9f9f9;
@@ -126,30 +122,30 @@
 	img {
 		width: 100%;
 	}
-    .postContainer {
+	.postContainer {
 		padding: 10px;
 		border-radius: 10px;
 		margin-bottom: 20px;
 		width: 90%;
 		max-width: 1200px;
-		display: grid;
+		/* display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 10px;
+		gap: 10px; */
 		box-sizing: border-box;
 	}
-	.postTextContainer{
+	.postTextContainer {
 		padding-right: 10px;
 	}
 	.postContainer img {
 		width: 100%;
 	}
-	.postContainer code{
+	.postContainer code {
 		display: block;
 		margin-bottom: 10px;
 	}
-    a {
-        color: inherit;
-    }
+	a {
+		color: inherit;
+	}
 	/* .link {
 		display: block;
 		width: fit-content;
@@ -185,7 +181,7 @@
 	}
 
 	@media screen and (max-width: 700px) {
-        .courseContainer,
+		.courseContainer,
 		.cardContainer {
 			display: grid;
 			grid-template-columns: 1fr;
@@ -195,7 +191,7 @@
 			grid-template-columns: 1fr;
 			gap: 20px;
 		}
-		footer{
+		footer {
 			flex-direction: column;
 		}
 	}
