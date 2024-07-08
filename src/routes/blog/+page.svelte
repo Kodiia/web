@@ -6,6 +6,7 @@
 	} from '$lib/store';
 
 	import homeImg from '$lib/images/home.png';
+	import agentsImg from '$lib/images/agents.jpeg';
 
 	import NavPanel from '$lib/NavPanel.svelte';
 </script>
@@ -16,6 +17,30 @@
 
 		<main>
 			<h1 style="margin-top: 80px;">Blog</h1>
+			<div class="postContainer" style="border: 1px solid hsl({$textColor + ', 20%'});">
+				<div class="postTextContainer">
+
+					<h3
+						style="margin-top: 0; border-bottom: 1px solid hsl({$textColor +
+							', 20%'}); padding-bottom: 10px;"
+					>
+					Creative superheroes are here to assist you. Meet Multi-Agent AI Systems.
+					</h3>
+
+					<p style="padding-bottom: 10px; border-bottom: 1px solid hsl({$textColor + ', 20%'});">
+						At Kodiia, our research is primarily focused on the development of AI-powered tools
+							designed for creative tasks. These tools are particularly geared towards generative,
+							computational, and procedural design areas. We believe that multi-agent systems are,
+							perhaps, one of the most effective approaches to designing such tools. 
+					</p>
+					<a href="/blog/multi-agent-systems" class="link">More...</a>
+				</div>
+				<img
+					src="{agentsImg}"
+					alt="workshop-outcome-preview"
+				/>
+			</div>
+			
 			<div class="postContainer" style="border: 1px solid hsl({$textColor + ', 20%'});">
 				<div class="postTextContainer">
 					<code>DigitalFUTURES 2024</code>
