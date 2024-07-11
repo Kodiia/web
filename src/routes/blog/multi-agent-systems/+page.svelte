@@ -12,6 +12,7 @@
 	import agentsImg from '$lib/images/agents.jpeg';
 
 	import NavPanel from '$lib/NavPanel.svelte';
+	import EmailForm from '$lib/EmailForm.svelte';
 </script>
 
 <div class={$theme}>
@@ -80,7 +81,7 @@
 					</p>
 					<h3>Mixture Of Agents (MoA)</h3>
 					<p>
-						MoA introduces a layered architecture where each layer consists of several LLM agents.
+						MoA by Together AI introduces a layered architecture where each layer consists of several LLM agents.
 						These agents refine responses using outputs from the previous layer as auxiliary
 						information, integrating diverse capabilities and insights from various models. This
 						approach has shown significant improvements in accuracy compared to standalone models
@@ -88,7 +89,7 @@
 					</p>
 					<h3>GPT-pilot</h3>
 					<p>
-						GPT Pilot aims to build fully working, production-ready apps through a collaborative
+						GPT-pilot aims to build fully working, production-ready apps through a collaborative
 						effort between AI and developers. It employs a series of specialized agents, including
 						Specification Writer, Architect, Tech Lead, Developer, Code Monkey, Reviewer,
 						Troubleshooter, Debugger, and Technical Writer, to handle different aspects of the
@@ -170,6 +171,9 @@
 					</p>
 				</div>
 			</article>
+
+			<EmailForm />
+			
 		</main>
 		<footer>
 			<p>Copyright © 2024 Kodiia</p>
@@ -249,6 +253,8 @@
 	.applyLink:hover {
 		box-shadow: 0 0 10px #3d9;
 	}
+
+	
 
 	@media screen and (max-width: 700px) {
 		article {

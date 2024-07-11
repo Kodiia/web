@@ -20,6 +20,7 @@
 	import runImg from '$lib/images/run.png';
 
 	import NavPanel from '$lib/NavPanel.svelte';
+	import EmailForm from '$lib/EmailForm.svelte';
 </script>
 
 <div class={$theme}>
@@ -151,6 +152,8 @@
 					</p>
 				</div>
 			</article>
+
+			<EmailForm />
 		</main>
 		<footer>
 			<p>Copyright © 2024 Kodiia</p>
