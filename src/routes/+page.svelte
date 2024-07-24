@@ -223,7 +223,7 @@
 						>programmer</span
 					>
 				</h1>
-				<h3 style="margin-top: 0;">AI-powered in-browser code editor</h3>
+				<h3 style="margin-top: 0;">AI-powered workspace for creative tasks</h3>
 				<div class="heroLinksContainer">
 					<div class="buttonWrapper">
 						<a
