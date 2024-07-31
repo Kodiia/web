@@ -240,7 +240,7 @@
 							}}
 							on:pointerleave={() => {
 								startButtonIsHovered = false;
-							}}>GET STARTED with βeta</a
+							}}>GET STARTED with βeta - it's free</a
 						>
 					</div>
 					<!-- <a href='/blog/getting-started'>Check our Getting Started guide</a> -->
@@ -657,7 +657,7 @@
 		padding: 2px;
 		margin: 0 0 20px 0;
 		box-sizing: border-box;
-		width: 150px;
+		width: 200px;
 		border-radius: 30px;
 		background-size: 300px 300px;
 		background-position: 0 50%;
